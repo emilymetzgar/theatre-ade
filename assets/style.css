@@ -27,13 +27,13 @@ body{
     height: 35px;
   }
   .carousel__photo {
-    height: 350px;
+    height: 50%;
     opacity: 0;
     position: absolute;
     top:0;
-    width: 75%;
+    width: 50%;
     margin: auto;
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
     z-index: 100;
     transition: transform .5s, opacity .5s, z-index .5s;
   }
@@ -92,6 +92,12 @@ body{
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+footer{
+    position: fixed;
+    bottom:0px;
+    width:100%;
+}
+
 .contact {
   margin-left: 35px;
 }
@@ -107,6 +113,6 @@ margin-left: 20px;
 }
 
 .Squad:hover {
-  margin-left: 500px;
+    text-align: left;
   color: rgb(14, 145, 25);
 }
