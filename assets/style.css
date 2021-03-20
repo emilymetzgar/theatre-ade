@@ -6,7 +6,9 @@
     float:right;
 }
 
-
+.form-control {
+  width: 400px;
+}
 .carousel-wrapper {
     overflow: hidden;
     width: 90%;
@@ -20,11 +22,18 @@
     transform-style: preserve-3d;
   }
 
+  .button {
+    float: right;
+    margin-right: 480px;
+    margin-top: -52px ;
+    height: 35px;
+  }
   .carousel__photo {
+    height: 350px;
     opacity: 0;
     position: absolute;
     top:0;
-    width: 100%;
+    width: 75%;
     margin: auto;
     padding: 1rem 4rem;
     z-index: 100;
@@ -103,4 +112,3 @@ margin-left: 20px;
   margin-left: 500px;
   color: rgb(14, 145, 25);
 }
-
