@@ -1,113 +1,96 @@
+$(document).ready(function () {
 
-var itemClassName = "carousel__photo";
-    items = d.getElementsByClassName(itemClassName),
-    totalItems = items.length,
-    slide = 0,
-    moving = true;
-
-    // Set classes
-function setInitialClasses() {
-    // Targets the previous, current, and next items
-    // This assumes there are at least three items.
-    items[totalItems - 1].classList.add("prev");
-    items[0].classList.add("active");
-    items[1].classList.add("next");
-  }
-  // Set event listeners
-  function setEventListeners() {
-    var next = d.getElementsByClassName('carousel__button--next')[0],
-        prev = d.getElementsByClassName('carousel__button--prev')[0];
-    next.addEventListener('click', moveNext);
-    prev.addEventListener('click', movePrev);
-  }
-
-  // Next navigation handler
-function moveNext() {
-    // Check if moving
-    if (!moving) {
-      // If it's the last slide, reset to 0, else +1
-      if (slide === (totalItems - 1)) {
-        slide = 0;
-      } else {
-        slide++;
-      }
-      // Move carousel to updated slide
-      moveCarouselTo(slide);
-    }
-  }
-  // Previous navigation handler
-  function movePrev() {
-    // Check if moving
-    if (!moving) {
-      // If it's the first slide, set as the last slide, else -1
-      if (slide === 0) {
-        slide = (totalItems - 1);
-      } else {
-        slide--;
-      }
-            
-      // Move carousel to updated slide
-      moveCarouselTo(slide);
-    }
-  }
-
-  function disableInteraction() {
-    // Set 'moving' to true for the same duration as our transition.
-    // (0.5s = 500ms)
-    
-    moving = true;
-    // setTimeout runs its function once after the given time
-    setTimeout(function(){
-      moving = false
-    }, 500);
-  }
-
-  function moveCarouselTo(slide) {
-    // Check if carousel is moving, if not, allow interaction
-    if(!moving) {
-      // temporarily disable interactivity
-      disableInteraction();
-      // Update the "old" adjacent slides with "new" ones
-      var newPrevious = slide - 1,
-          newNext = slide + 1,
-          oldPrevious = slide - 2,
-          oldNext = slide + 2;
-      // Test if carousel has more than three items
-      if ((totalItems - 1) > 3) {
-        // Checks and updates if the new slides are out of bounds
-        if (newPrevious <= 0) {
-          oldPrevious = (totalItems - 1);
-        } else if (newNext >= (totalItems - 1)){
-          oldNext = 0;
+    var apiKey = 'a1fbb820'
+  
+    $("#movieForm").submit(function (event) {
+      event.preventDefault()
+  
+      var movie = $("#movie").val()
+  
+      var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey
+  
+      var result = ''
+  
+      var movieSign;
+  
+      $.ajax({
+        method: 'GET',
+        url: baseUrl + "&t=" + movie,
+        success: function (data) {
+  
+          result = `
+                  <img style="float:left" class="img-thumbnail" width= "200" height = "200" src="${data.Poster}">
+                  `
+  
+          $("#result").html(result)
+  
+          console.log(result);
+          console.log(data.Released.split(" "));
+          var dateArr = data.Released.split(" ");
+          movieSign = getZodiacSign(parseInt(dateArr[0]), dateArr[1]);
+  
+          var releaseDate = data.Released
+          $("#release-date").html("Movie's B Day: " + releaseDate + " " + movieSign);
+  
+          if (releaseDate === true) {
+            $("#release-date").append(releaseDate);
+          }
+          const URL = 'https://aztro.sameerkumar.website/?sign=' + movieSign + '&day=today';
+          fetch(URL, {
+              method: 'POST'
+            })
+            .then(response => response.json())
+            .then(json => {
+              const date = json.current_date;
+              console.log(json);
+              //include description here
+            });
         }
-        // Checks and updates if slide is at the beginning/end
-        if (slide === 0) {
-          newPrevious = (totalItems - 1);
-          oldPrevious = (totalItems - 2);
-          oldNext = (slide + 1);
-        } else if (slide === (totalItems -1)) {
-          newPrevious = (slide - 1);
-          newNext = 0;
-          oldNext = 1;
-        }
-        // Now we've worked out where we are and where we're going, 
-        // by adding/removing classes we'll trigger the transitions.
-        // Reset old next/prev elements to default classes
-        items[oldPrevious].className = itemClassName;
-        items[oldNext].className = itemClassName;
-        // Add new classes
-        items[newPrevious].className = itemClassName + " prev";
-        items[slide].className = itemClassName + " active";
-        items[newNext].className = itemClassName + " next";
-      }
+      });
+    });
+  })
+  
+  function getZodiacSign(day, month) {
+  
+    var signs = {
+      'capricorn': 'capricorn',
+      'aquarius': 'aquarius',
+      'pisces': 'pisces',
+      'aries': 'aries',
+      'taurus': 'taurus',
+      'gemini': 'gemini',
+      'cancer': 'cancer',
+      'leo': 'leo',
+      'virgo': 'virgo',
+      'libra': 'libra',
+      'scorpio': 'scorpio',
+      'sagittarius': 'sagittarius'
     }
+  
+    if ((month == "Jan" && day <= 20) || (month == "Dec" && day >= 22)) {
+      return zodiacSigns.capricorn;
+    } else if ((month == "Jan" && day >= 21) || (month == "Feb" && day <= 18)) {
+      return signs.aquarius;
+    } else if ((month == "Feb" && day >= 19) || (month == "Mar" && day <= 20)) {
+      return signs.pisces;
+    } else if ((month == "Mar" && day >= 21) || (month == "Apr" && day <= 20)) {
+      return signs.aries;
+    } else if ((month == "Apr" && day >= 21) || (month == "May" && day <= 20)) {
+      return signs.taurus;
+    } else if ((month == "May" && day >= 21) || (month == "Jun" && day <= 20)) {
+      return signs.gemini;
+    } else if ((month == "Jun" && day >= 22) || (month == "Jul" && day <= 22)) {
+      return signs.cancer;
+    } else if ((month == "Jul" && day >= 23) || (month == "Aug" && day <= 23)) {
+      return signs.leo;
+    } else if ((month == "Aug" && day >= 24) || (month == "Sep" && day <= 23)) {
+      return signs.virgo;
+    } else if ((month == "Sep" && day >= 24) || (month == "Oct" && day <= 23)) {
+      return signs.libra;
+    } else if ((month == "Oct" && day >= 24) || (month == "Nov" && day <= 22)) {
+      return signs.scorpio;
+    } else if ((month == "Nov" && day >= 23) || (month == "Dec" && day <= 21)) {
+      return signs.sagittarius;
+    }
+  
   }
-
-  function initCarousel() {
-    setInitialClasses();
-    setEventListeners();
-    // Set moving to false so that the carousel becomes interactive
-    moving = false;
-  }
-
-
