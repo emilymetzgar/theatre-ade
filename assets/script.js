@@ -1,3 +1,4 @@
+
 var itemClassName = "carousel__photo";
     items = d.getElementsByClassName(itemClassName),
     totalItems = items.length,
@@ -108,4 +109,5 @@ function moveNext() {
     // Set moving to false so that the carousel becomes interactive
     moving = false;
   }
+
 
