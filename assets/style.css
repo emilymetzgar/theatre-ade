@@ -1,14 +1,12 @@
-.astrology{
-    float:left;
-}
-
-.actorInfo{
-    float:right;
+body{
+    background-image: url("https://www.bsfa.org/wp-content/uploads/2019/05/film-660x440.jpg");
+    image-rendering: auto;
 }
 
 .form-control {
-  width: 400px;
+  max-width: 47%;
 }
+
 .carousel-wrapper {
     overflow: hidden;
     width: 90%;
@@ -23,6 +21,7 @@
   }
 
   .button {
+    float: right;
     margin-right: 480px;
     margin-top: -52px ;
     height: 35px;
