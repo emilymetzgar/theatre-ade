@@ -23,8 +23,9 @@
   .carousel__photo {
     opacity: 0;
     position: absolute;
-    top:0;
-    width: 100%;
+    top:auto;
+    height: 800px;
+    width: 700px;
     margin: auto;
     padding: 1rem 4rem;
     z-index: 100;
