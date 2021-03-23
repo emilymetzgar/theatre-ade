@@ -1,5 +1,7 @@
 body{
     background-image: url("https://www.bsfa.org/wp-content/uploads/2019/05/film-660x440.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
     image-rendering: auto;
 }
 
