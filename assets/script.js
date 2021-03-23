@@ -9,11 +9,7 @@ $(document).ready(function () {
 
     var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey
 
-<<<<<<< HEAD
     var result = "";
-=======
-    var result = ''
->>>>>>> 4f19ecf7cb464cbac8984f31640401f4b8480e56
 
     var movieSign;
 
@@ -126,8 +122,4 @@ function getZodiacSign(day, month) {
 
     return signs.sagittarius;
   }
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 4f19ecf7cb464cbac8984f31640401f4b8480e56
