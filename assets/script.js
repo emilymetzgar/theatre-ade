@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey
 
-    var result = ''
+    var result = "";
 
     var movieSign;
 

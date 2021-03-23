@@ -2,65 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <title>Theater-Ade</title>
+  <title>Theater-Ade</title>
 </head>
 
 <body>
-    <div class="header bg-gradient-to-r from-yellow-500 via-pink-500 to-red-500 shadow-md text-4xl">
+  <div class="header bg-gradient-to-r from-yellow-500 via-pink-500 to-red-500 shadow-md text-4xl">
     <h1>Welcome to Theater-Ade</h1>
-    </div>
-  
+  </div>
+
   <div class="container">
         <form id="movieForm" autocomplete="on">
             <div class = "form-group">
     
-            <label for="Movie">Movie Name</label>
+            <label for="Movie" class="bg-white">Movie Name</label>
               <input class="form-control" type="text" id="movie">
-            
-    
-              <button class ="button bg-white rounded p-1">
-                Search Movie
-              </button>
             </div>
-            <div id="result"></div>
-            <div id="horoscope-result"><h2 id="release-date" class="bg-white"></h2></div>
-        </form>
-      </div>
-
-    <div class="carousel-wrapper p-40">
-        <div class="carousel">
-          <img class="carousel__photo initial" src="./assets/ProjectPic1.jpg">
-          <img class="carousel__photo" src="./assets/ProjectPic2.jpg">
-          <img class="carousel__photo" src="./assets/ProjectPic3.jpg">
-          <img class="carousel__photo" src="./assets/ProjectPic4.jpg">
-          <img class="carousel__photo" src="./assets/ProjectPic5.jpg">
-            
-          <div class="carousel__button--next"></div>
-          <div class="carousel__button--prev"></div>
-        </div>
-      </div>
-
-    <footer class="footer  bg-gradient-to-r from-yellow-500 via-pink-500 to-red-500 shadow-md" id="foot-container">
-      <h4 class="Squad">The Elite Squad </h4>
-      <a class="contact" href="#"><button type="button" class="btn btn-outline-success rounded bg-white">Contact</button></a>
-      <a class="github" href="#"><button type="button" class="btn btn-outline-success rounded bg-white">Github</button></a>
-      <a class="LinkedIn" href="#"><button type="button" class="btn btn-outline-success rounded bg-white">LinkedIn</button></a>
-      
-    </footer>
-
     
-    <script src="assets/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/carousel.js"></script>
+            <button class ="button bg-white rounded p-1">
+              Search Movie
+            </button>
+
+        <label for="Movie" class="bg-white">Movie Name</label>
+        <input class="form-control" type="text" id="movie">
+
+
+        <button class="button bg-white rounded p-1">
+          Search Movie
+        </button>
+      </form>
+      </div>
+      <div id="result"></div>
+      <div id="horoscope-result">
+        <h2 id="release-date" class="bg-white"></h2>
+        <h3 id="movie-sign-title"></h3>
+        <p id="sign-info"></p>
+        <p id="plot-info"></p>
+      </div>
     
+  </div>
+
+  <div class="carousel-wrapper p-40">
+    <div class="carousel">
+      <img class="carousel__photo initial" src="./assets/ProjectPic1.jpg" alt="Venom movie poster">
+      <img class="carousel__photo" src="./assets/ProjectPic2.jpg" alt="Mortal Kombat movie poster">
+      <img class="carousel__photo" src="./assets/ProjectPic3.jpg" alt="Looney Toons Basketball movie poster">
+      <img class="carousel__photo" src="./assets/ProjectPic4.jpg" alt="Nobody movie poster">
+      <img class="carousel__photo" src="./assets/ProjectPic5.jpg" alt="Tom and Jerry movie poster">
+
+      <div class="carousel__button--next"></div>
+      <div class="carousel__button--prev"></div>
+    </div>
+  </div>
+
+</body>
+
+<footer class="footer  bg-gradient-to-r from-yellow-500 via-pink-500 to-red-500 shadow-md" id="foot-container">
+
+  <h4 class="Squad">The Elite Squad </h4>
+  <a class="contact" href="#"><button type="button"
+      class="btn btn-outline-success rounded bg-white">Contact</button></a>
+  <a class="github" href="#"><button type="button" class="btn btn-outline-success rounded bg-white">Github</button></a>
+  <a class="LinkedIn" href="#"><button type="button"
+      class="btn btn-outline-success rounded bg-white">LinkedIn</button></a>
+
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="assets/carousel.js"></script>
+<script src="assets/script.js"></script>
+
 </html>
