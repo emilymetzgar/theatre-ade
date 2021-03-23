@@ -43,7 +43,6 @@ $(document).ready(function () {
             .then(json => {
               const date = json.current_date;
               console.log(json);
-              //include description here
             });
         }
       });
@@ -53,44 +52,44 @@ $(document).ready(function () {
   function getZodiacSign(day, month) {
   
     var signs = {
-      'capricorn': 'capricorn',
-      'aquarius': 'aquarius',
-      'pisces': 'pisces',
-      'aries': 'aries',
-      'taurus': 'taurus',
-      'gemini': 'gemini',
-      'cancer': 'cancer',
-      'leo': 'leo',
-      'virgo': 'virgo',
-      'libra': 'libra',
-      'scorpio': 'scorpio',
-      'sagittarius': 'sagittarius'
+      'Capricorn': 'Capricorn',
+      'Aquarius': 'Aquarius',
+      'Pisces': 'Pisces',
+      'Aries': 'Aries',
+      'Taurus': 'Taurus',
+      'Gemini': 'Gemini',
+      'Cancer': 'Cancer',
+      'Leo': 'Leo',
+      'Virgo': 'Virgo',
+      'Libra': 'Libra',
+      'Scorpio': 'Scorpio',
+      'Sagittarius': 'Sagittarius'
     }
   
     if ((month == "Jan" && day <= 20) || (month == "Dec" && day >= 22)) {
-      return zodiacSigns.capricorn;
+      return zodiacSignsCapricorn;
     } else if ((month == "Jan" && day >= 21) || (month == "Feb" && day <= 18)) {
-      return signs.aquarius;
+      return signs.Aquarius;
     } else if ((month == "Feb" && day >= 19) || (month == "Mar" && day <= 20)) {
-      return signs.pisces;
+      return signs.Pisces;
     } else if ((month == "Mar" && day >= 21) || (month == "Apr" && day <= 20)) {
-      return signs.aries;
+      return signs.Aries;
     } else if ((month == "Apr" && day >= 21) || (month == "May" && day <= 20)) {
-      return signs.taurus;
+      return signs.Taurus;
     } else if ((month == "May" && day >= 21) || (month == "Jun" && day <= 20)) {
-      return signs.gemini;
+      return signs.Gemini;
     } else if ((month == "Jun" && day >= 22) || (month == "Jul" && day <= 22)) {
-      return signs.cancer;
+      return signs.Cancer;
     } else if ((month == "Jul" && day >= 23) || (month == "Aug" && day <= 23)) {
-      return signs.leo;
+      return signs.Leo;
     } else if ((month == "Aug" && day >= 24) || (month == "Sep" && day <= 23)) {
-      return signs.virgo;
+      return signs.Virgo;
     } else if ((month == "Sep" && day >= 24) || (month == "Oct" && day <= 23)) {
-      return signs.libra;
+      return signs.Libra;
     } else if ((month == "Oct" && day >= 24) || (month == "Nov" && day <= 22)) {
-      return signs.scorpio;
+      return signs.Scorpio;
     } else if ((month == "Nov" && day >= 23) || (month == "Dec" && day <= 21)) {
-      return signs.sagittarius;
+      return signs.Sagittarius;
     }
   
-  }
+}    
