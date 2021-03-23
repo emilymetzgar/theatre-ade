@@ -21,9 +21,9 @@ body{
   }
 
   .button {
-    float: right;
+    float: left;
     margin-right: 480px;
-    margin-top: -52px ;
+    margin-top: 15px ;
     height: 35px;
   }
   .carousel__photo {
@@ -116,3 +116,4 @@ margin-left: 20px;
     text-align: left;
   color: rgb(14, 145, 25);
 }
+ 
