@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey
 
-    var result = ''
+    var result = "";
 
     var movieSign;
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
       success: function (data) {
 
         result = `
-                <img style="float:left" class="img-thumbnail" width= "400" height = "400" src="${data.Poster}">
+                <img class="img-thumbnail" width= "400" height = "400" src="${data.Poster}">
                 `
 
         $("#result").html(result)
