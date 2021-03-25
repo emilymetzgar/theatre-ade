@@ -79,7 +79,7 @@ function getZodiacSign(day, month) {
   }
 
   if ((month == "Jan" && day <= 20) || (month == "Dec" && day >= 22)) {
-    return zodiacSigns.capricorn
+    return signs.capricorn
 
   } else if ((month == "Jan" && day >= 21) || (month == "Feb" && day <= 18)) {
     return signs.aquarius;
