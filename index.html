@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css">
   <title>Theater-Ade</title>
 </head>
 
@@ -19,35 +18,27 @@
     <h1>Welcome to Theater-Ade</h1>
   </div>
 
-  <div class="container">
-        <form id="movieForm" autocomplete="on">
-            <div class = "form-group">
-    
-            <label for="Movie" class="bg-white">Movie Name</label>
-              <input class="form-control" type="text" id="movie">
-            </div>
-    
-            <button class ="button bg-white rounded p-1">
-              Search Movie
-            </button>
+  <div class="container mx-auto pt-4">
+    <form id="movieForm" autocomplete="on" class="flex flex-col ml-16">
+      <label for="Movie" class="bg-white w-24">Movie Name</label>
+      <input class="form-control h-12" type="text" id="movie">
+      <button class="button bg-white rounded p-1">
+        Search Movie
+      </button>
 
-        <label for="Movie" class="bg-white">Movie Name</label>
-        <input class="form-control" type="text" id="movie">
+    </form>
+  </div>
+  <div class="container flex mx-auto pt-4">
+    <div id="result">
 
+    </div>
+    <div class="container">
+      <h2 id="release-date" class="bg-white"></h2>
+      <h3 id="movie-sign-title" class="bg-white"></h3>
+      <p id="sign-info" class="bg-white"></p>
+      <p id="plot-info" class="bg-white"></p>
+    </div>
 
-        <button class="button bg-white rounded p-1">
-          Search Movie
-        </button>
-      </form>
-      </div>
-      <div id="result"></div>
-      <div id="horoscope-result">
-        <h2 id="release-date" class="bg-white"></h2>
-        <h3 id="movie-sign-title"></h3>
-        <p id="sign-info"></p>
-        <p id="plot-info"></p>
-      </div>
-    
   </div>
 
   <div class="carousel-wrapper p-40">
