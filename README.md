@@ -13,9 +13,10 @@ Runs in the browser and features HTML, CSS, bootstrap, and is powered by Javascr
 
 Organizes movie and astrology data from third party APIs to display the movie's astrology sign based on the movie's release date. 
 
-![A screenshot of the application](./assets/images/screenshot.gif)
+![A screenshot of the application](./assets/images/screenshot1.PNG)
+![A screenshot of the application](./assets/images/screenshot2.PNG)
 
-link to application: https://
+link to application: https://emilymetzgar.github.io/project-1/
 
 ## Credits
 
