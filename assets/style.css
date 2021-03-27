@@ -5,6 +5,10 @@ body{
   image-rendering: auto;
 }
 
+.label{
+  color: white;
+}
+
 .form-control {
 max-width: 47%;
 }
