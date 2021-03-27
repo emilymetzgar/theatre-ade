@@ -118,6 +118,23 @@ margin-left: 20px;
 }
 
 .Squad:hover {
-  text-align: left;
+text-align: left;
 color: rgb(14, 145, 25);
+}
+
+.movie-plot{
+  background-image: url("images/zodiac.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  opacity: none;
+}
+
+p {
+  font-size: 20px;
 }
