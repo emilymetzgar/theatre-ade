@@ -1,19 +1,19 @@
 $(document).ready(function () {
-
+  //store the omdb api key
   var apiKey = 'a1fbb820'
-
+  //form to store users search option and api data
   $("#movieForm").submit(function (event) {
     event.preventDefault()
 
-    var movie = $("#movie").val()
+    var movie = $("#movie").val() //value for user movie search
 
-    var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey
+    var baseUrl = "https://www.omdbapi.com/?apikey=" + apiKey //base url from ombd
 
-    var result = "";
+    var result = ""; //store results in empty string to allow them to change by user
 
     var movieSign;
 
-    $.ajax({
+    $.ajax({ //method to retreive info from omdb api
       method: 'GET',
       url: baseUrl + "&t=" + movie,
       success: function (data) {
@@ -22,45 +22,43 @@ $(document).ready(function () {
                 <img class="img-thumbnail" width= "400" height = "400" src="${data.Poster}">
                 `
 
-        $("#result").html(result)
+        $("#result").html(result) //post result in html
 
-        console.log(result);
-        console.log(data)
-        console.log(data.Released.split(" "));
-        var dateArr = data.Released.split(" ");
-        movieSign = getZodiacSign(parseInt(dateArr[0]), dateArr[1]);
+        var dateArr = data.Released.split(" "); //split data from object
+        movieSign = getZodiacSign(parseInt(dateArr[0]), dateArr[1]); //get data from object
+        //use parse int to convert number
 
-        var releaseDate = data.Released
-        var plot = data.Plot
+        var releaseDate = data.Released //assign data from api object to variable
+        var plot = data.Plot //assign data from api object to variable
 
-        $("#release-date").html("Movie's B Day: " + releaseDate + " ");
-        $("#movie-sign-title").html(movieSign)
+        $("#release-date").html("Movie's B Day: " + releaseDate + " "); //post info in html
+        $("#movie-sign-title").html(movieSign) //post info in html
+        $("#plot-info").html("<h2>Plot</h2> " + plot); //post info in html
 
-        $("#plot-info").html("<h3>Plot</h3> " + plot);
-
-
+        //conditional statements to append data from each api depending on what the user searches, 
+        //taking the release date of the movie, and appending it to the zodiac signs 
         if (releaseDate === true) {
           $("#release-date").append(releaseDate);
         }
+        //method to retreive info from astrology api
         const URL = 'https://aztro.sameerkumar.website/?sign=' + movieSign + '&day=today';
         fetch(URL, {
             method: 'POST'
           })
           .then(response => response.json())
           .then(json => {
-            const date = json.current_date;
             const signInfo = json.description;
-            console.log(json);
-            //include description here
 
-            $("#sign-info").html(signInfo);
+            $("#sign-info").html(signInfo); //post info in html
           });
       }
     });
   });
 })
 
-
+//function to get zodiac signs to be used in conditional statements 
+//depending on what movie the user searches 
+//using the release date data from omdb api
 function getZodiacSign(day, month) {
 
   var signs = {
